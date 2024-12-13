@@ -19,6 +19,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+LOCAL_KERNEL := device/xiaomi/emerald-kernel/Image.gz
+
+# Kernel
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
+
 # A/B
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
